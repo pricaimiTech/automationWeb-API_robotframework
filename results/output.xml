@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0 (Python 3.11.4 on win32)" generated="2024-07-10T16:20:49.497871" rpa="false" schemaversion="5">
+<suite id="s1" name="robotAPI" source="D:\github\qualiters club\robotAPI">
+<suite id="s1-s1" name="Tests" source="D:\github\qualiters club\robotAPI\tests">
+<suite id="s1-s1-s1" name="Api-Test" source="D:\github\qualiters club\robotAPI\tests\api-test">
+<suite id="s1-s1-s1-s1" name="FakeRESTApi" source="D:\github\qualiters club\robotAPI\tests\api-test\FakeRESTApi">
+<suite id="s1-s1-s1-s1-s1" name="Activities" source="D:\github\qualiters club\robotAPI\tests\api-test\FakeRESTApi\Activities.robot">
+<test id="s1-s1-s1-s1-s1-t1" name="Buscar todas as Activities" line="12">
+<kw name="GET" owner="RequestsLibrary">
+<msg time="2024-07-10T16:20:50.636085" level="INFO">GET Request : url=https://fakerestapi.azurewebsites.net/api/v1/Activities 
+ path_url=/api/v1/Activities 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg time="2024-07-10T16:20:50.636085" level="INFO">GET Response : url=https://fakerestapi.azurewebsites.net/api/v1/Activities 
+ status=200, reason=OK 
+ headers={'Content-Type': 'application/json; charset=utf-8; v=1.0', 'Date': 'Wed, 10 Jul 2024 19:20:51 GMT', 'Server': 'Kestrel', 'Transfer-Encoding': 'chunked', 'api-supported-versions': '1.0'} 
+ body=[{"id":1,"title":"Activity 1","dueDate":"2024-07-10T20:20:51.1629127+00:00","completed":false},{"id":2,"title":"Activity 2","dueDate":"2024-07-10T21:20:51.162915+00:00","completed":true},{"id":3,"title":"Activity 3","dueDate":"2024-07-10T22:20:51.1629154+00:00","completed":false},{"id":4,"title":"Activity 4","dueDate":"2024-07-10T23:20:51.1629156+00:00","completed":true},{"id":5,"title":"Activity 5","dueDate":"2024-07-11T00:20:51.1629159+00:00","completed":false},{"id":6,"title":"Activity 6","dueDate":"2024-07-11T01:20:51.1629163+00:00","completed":true},{"id":7,"title":"Activity 7","dueDate":"2024-07-11T02:20:51.1629166+00:00","completed":false},{"id":8,"title":"Activity 8","dueDate":"2024-07-11T03:20:51.1629169+00:00","completed":true},{"id":9,"title":"Activity 9","dueDate":"2024-07-11T04:20:51.1629171+00:00","completed":false},{"id":10,"title":"Activity 10","dueDate":"2024-07-11T05:20:51.1629176+00:00","completed":true},{"id":11,"title":"Activity 11","dueDate":"2024-07-11T06:20:51.1629179+00:00","completed":false},{"id":12,"title":"Activity 12","dueDate":"2024-07-11T07:20:51.1629182+00:00","completed":true},{"id":13,"title":"Activity 13","dueDate":"2024-07-11T08:20:51.1629184+00:00","completed":false},{"id":14,"title":"Activity 14","dueDate":"2024-07-11T09:20:51.1629187+00:00","completed":true},{"id":15,"title":"Activity 15","dueDate":"2024-07-11T10:20:51.162919+00:00","completed":false},{"id":16,"title":"Activity 16","dueDate":"2024-07-11T11:20:51.1629193+00:00","completed":true},{"id":17,"title":"Activity 17","dueDate":"2024-07-11T12:20:51.1629195+00:00","completed":false},{"id":18,"title":"Activity 18","dueDate":"2024-07-11T13:20:51.1629199+00:00","completed":true},{"id":19,"title":"Activity 19","dueDate":"2024-07-11T14:20:51.1629202+00:00","completed":false},{"id":20,"title":"Activity 20","dueDate":"2024-07-11T15:20:51.1629205+00:00","completed":true},{"id":21,"title":"Activity 21","dueDate":"2024-07-11T16:20:51.1629207+00:00","completed":false},{"id":22,"title":"Activity 22","dueDate":"2024-07-11T17:20:51.162921+00:00","completed":true},{"id":23,"title":"Activity 23","dueDate":"2024-07-11T18:20:51.1629213+00:00","completed":false},{"id":24,"title":"Activity 24","dueDate":"2024-07-11T19:20:51.1629233+00:00","completed":true},{"id":25,"title":"Activity 25","dueDate":"2024-07-11T20:20:51.1629236+00:00","completed":false},{"id":26,"title":"Activity 26","dueDate":"2024-07-11T21:20:51.1629239+00:00","completed":true},{"id":27,"title":"Activity 27","dueDate":"2024-07-11T22:20:51.1629241+00:00","completed":false},{"id":28,"title":"Activity 28","dueDate":"2024-07-11T23:20:51.1629244+00:00","completed":true},{"id":29,"title":"Activity 29","dueDate":"2024-07-12T00:20:51.1629247+00:00","completed":false},{"id":30,"title":"Activity 30","dueDate":"2024-07-12T01:20:51.162925+00:00","completed":true}] 
+ </msg>
+<msg time="2024-07-10T16:20:50.637087" level="INFO">${responseActivities} = &lt;Response [200]&gt;</msg>
+<var>${responseActivities}</var>
+<arg>${baseURL}/${path_Activities}</arg>
+<doc>Sends a GET request.</doc>
+<status status="PASS" start="2024-07-10T16:20:49.731438" elapsed="0.905649"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>activitiesID=${responseActivities.json()}[0][id]</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-07-10T16:20:50.637087" elapsed="0.000999"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<msg time="2024-07-10T16:20:50.639086" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${responseActivities.status_code}</arg>
+<arg>200</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2024-07-10T16:20:50.638086" elapsed="0.001000"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2024-07-10T16:20:50.640087" level="INFO">${activitiesID} = 1</msg>
+<arg>${activitiesID}</arg>
+<arg>${responseActivities.json()}[0][id]</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2024-07-10T16:20:50.639086" elapsed="0.001001"/>
+</kw>
+<status status="PASS" start="2024-07-10T16:20:49.730438" elapsed="0.909649"/>
+</test>
+<test id="s1-s1-s1-s1-s1-t2" name="Buscar uma Active" line="18">
+<kw name="GET" owner="RequestsLibrary">
+<msg time="2024-07-10T16:20:51.508680" level="INFO">GET Request : url=https://fakerestapi.azurewebsites.net/api/v1/Activities/1 
+ path_url=/api/v1/Activities/1 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg time="2024-07-10T16:20:51.508680" level="INFO">GET Response : url=https://fakerestapi.azurewebsites.net/api/v1/Activities/1 
+ status=200, reason=OK 
+ headers={'Content-Type': 'application/json; charset=utf-8; v=1.0', 'Date': 'Wed, 10 Jul 2024 19:20:51 GMT', 'Server': 'Kestrel', 'Transfer-Encoding': 'chunked', 'api-supported-versions': '1.0'} 
+ body={"id":1,"title":"Activity 1","dueDate":"2024-07-10T20:20:52.0377025+00:00","completed":false} 
+ </msg>
+<msg time="2024-07-10T16:20:51.509691" level="INFO">${responseActive} = &lt;Response [200]&gt;</msg>
+<var>${responseActive}</var>
+<arg>${baseURL}/${path_Activities}/${activitiesID}</arg>
+<doc>Sends a GET request.</doc>
+<status status="PASS" start="2024-07-10T16:20:50.641087" elapsed="0.868604"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>active=${responseActive.json()}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-07-10T16:20:51.509691" elapsed="0.000992"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<msg time="2024-07-10T16:20:51.511682" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${responseActive.status_code}</arg>
+<arg>200</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2024-07-10T16:20:51.510683" elapsed="0.000999"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>active=${responseActive.json()}[title]</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-07-10T16:20:51.511682" elapsed="0.000000"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${responseActive.json()}[title]</arg>
+<arg>Activity 1</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2024-07-10T16:20:51.512682" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2024-07-10T16:20:50.641087" elapsed="0.871595"/>
+</test>
+<status status="PASS" start="2024-07-10T16:20:49.526936" elapsed="1.986747"/>
+</suite>
+<status status="PASS" start="2024-07-10T16:20:49.524936" elapsed="1.989747"/>
+</suite>
+<status status="PASS" start="2024-07-10T16:20:49.523936" elapsed="1.991748"/>
+</suite>
+<status status="PASS" start="2024-07-10T16:20:49.521936" elapsed="1.994748"/>
+</suite>
+<status status="PASS" start="2024-07-10T16:20:49.502932" elapsed="2.014752"/>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="2" fail="0" skip="0" id="s1" name="robotAPI">robotAPI</stat>
+<stat pass="2" fail="0" skip="0" id="s1-s1" name="Tests">robotAPI.Tests</stat>
+<stat pass="2" fail="0" skip="0" id="s1-s1-s1" name="Api-Test">robotAPI.Tests.Api-Test</stat>
+<stat pass="2" fail="0" skip="0" id="s1-s1-s1-s1" name="FakeRESTApi">robotAPI.Tests.Api-Test.FakeRESTApi</stat>
+<stat pass="2" fail="0" skip="0" id="s1-s1-s1-s1-s1" name="Activities">robotAPI.Tests.Api-Test.FakeRESTApi.Activities</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
